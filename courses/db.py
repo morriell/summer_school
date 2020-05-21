@@ -8,12 +8,13 @@ from flask import current_app as app, g
 
 def get_db():
     if 'db' not in g:
-        g.db = mysql.connector.connect(
-            user = app.config['MYSQL_USER'], 
+        g.connector = mysql.connector.connect(
+            user = app.config['MYSQL_USER'],
             password = app.config['MYSQL_PASS'],
             host = app.config['MYSQL_HOST'],
             database = app.config['MYSQL_DB']
             )
+        g.db = g.connector.cursor()
 
     return g.db
 
