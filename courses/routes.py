@@ -4,9 +4,7 @@
 from subprocess import Popen, PIPE
 
 from flask import current_app as app
-from flask import render_template, request
-#from flask import url_for
-#from get_courses import get_all_courses
+from flask import render_template, request,Response
 from courses.db import get_db
 import json
 
@@ -24,8 +22,9 @@ def get_courses():
 
     for result in results:
         json_data.append(dict(zip(row_headers,result)))
+    json_response = json.dumps(json_data, ensure_ascii=False).encode('utf8')
 
-    return json.dumps(json_data, ensure_ascii=False).encode('utf8')
+    return Response(json_response, content_type="application/json; charset=utf-8")
 
 @app.route('/get_course/<id>')
 def get_course(id):
