@@ -2,8 +2,10 @@
 A cool site on flask for advertaising courses for summer school 1505, year 2020.
 
 Create a MySQL DB and fill in it's credentials in config.py
+The schema of DB may be recreated from `schema.sql`
 
-Install pip and create a virtual. I've called it SummerSchool so this name is used further.
+Install pip and create a virtual env. I've called it SummerSchool so this name is used further.
+Install uwsgi, mysql-connector and jsonify with `pip install`.
 
 Venvconf:
 
@@ -22,7 +24,7 @@ Venvconf:
 |uWSGI           |2.0.18|
 |Werkzeug        |1.0.1|
 
-and start it:
+Start venv:
 ```
     source SummerSchool/bin/activate
 ```
