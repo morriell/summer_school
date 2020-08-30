@@ -10,7 +10,7 @@ from courses import db
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static')
     configure_app(app)
 
     db.init_app(app)

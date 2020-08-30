@@ -3,12 +3,13 @@
 
 
 class BaseConfig(object):
-    SERVER_NAME = 'your_server_name'
+    SERVER_NAME = 'courses1505.ru'
     APPLICATION_ROOT = ''
 
-    MYSQL_HOST = 'mysql_host'
-    MYSQL_DB = "DB_name"
-    MYSQL_USER = "mysql_user"
-    MYSQL_PASS = "mysql_pass"
+    MYSQL_HOST = 'localhost'
+    # Fill in further lines with your data
+    MYSQL_DB = ""
+    MYSQL_USER = ""
+    MYSQL_PASS = ""
 
 
